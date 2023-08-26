@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:learnapp/core/constants.dart';
+import 'package:learnapp/widget/card_widget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -10,55 +10,25 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Flutter App"),
       ),
-      body: SingleChildScrollView(
+      body: const SingleChildScrollView(
         child: Column(
           children: [
-            Card(
-              child: Container(
-                  padding: const EdgeInsets.all(8.0),
-                  width: double.infinity,
-                  child: Column(
-                    children: [
-                      const SizedBox(height: kDouble5),
-                      Image.asset('images/rocket.png'),
-                      const Text(
-                        "Title",
-                        style: TextStyle(
-                          fontSize: 22,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      const Text("Description"),
-                      const SizedBox(height: kDouble10),
-                    ],
-                  )),
-            ),
+            CardWidget(title: 'Rocket'),
             Row(
               children: [
                 Expanded(
-                  child: Card(
-                    child: Container(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Image.asset('images/space.png'),
-                    ),
-                  ),
-                ),
+                    child: CardWidget(
+                  title: 'Rocket',
+                )),
                 Expanded(
-                  child: Card(
-                    child: Container(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Image.asset('images/travel.png'),
-                    ),
-                  ),
-                ),
+                    child: CardWidget(
+                  title: 'Rocket',
+                )),
               ],
             ),
-            Card(
-              child: Container(
-                padding: const EdgeInsets.all(8.0),
-                child: Image.asset('images/yeah.png'),
-              ),
-            ),
+            CardWidget(
+              title: 'Rocket',
+            )
           ],
         ),
       ),
