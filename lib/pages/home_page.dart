@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learnapp/core/constants.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -18,7 +19,7 @@ class HomePage extends StatelessWidget {
                   width: double.infinity,
                   child: Column(
                     children: [
-                      SizedBox(height: 5),
+                      const SizedBox(height: kDouble5),
                       Image.asset('images/rocket.png'),
                       const Text(
                         "Title",
@@ -28,7 +29,7 @@ class HomePage extends StatelessWidget {
                         ),
                       ),
                       const Text("Description"),
-                      SizedBox(height: 10),
+                      const SizedBox(height: kDouble10),
                     ],
                   )),
             ),
