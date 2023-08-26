@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learnapp/class/item_class.dart';
 import 'package:learnapp/widget/card_widget.dart';
 
 class HomePage extends StatelessWidget {
@@ -10,32 +11,30 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text("Flutter App"),
       ),
-      body: const SingleChildScrollView(
+      body: SingleChildScrollView(
         child: Column(
           children: [
             CardWidget(
-              title: 'Rocket',
-              imagePath: 'images/rocket.png',
+              box: ItemClass(title: 'Rocket', imagePath: 'images/rocket.png'),
             ),
             Row(
               children: [
                 Expanded(
                   child: CardWidget(
-                    title: 'Rocket',
-                    imagePath: 'images/travel.png',
+                    box: ItemClass(
+                        title: 'Travel', imagePath: 'images/travel.png'),
                   ),
                 ),
                 Expanded(
                   child: CardWidget(
-                    title: 'Rocket',
-                    imagePath: 'images/space.png',
+                    box: ItemClass(
+                        title: 'Space', imagePath: 'images/space.png'),
                   ),
                 ),
               ],
             ),
             CardWidget(
-              title: 'Rocket',
-              imagePath: 'images/yeah.png',
+              box: ItemClass(title: 'YAY', imagePath: 'images/yeah.png'),
             ),
           ],
         ),
