@@ -18,14 +18,17 @@ class HomePage extends StatelessWidget {
                   width: double.infinity,
                   child: Column(
                     children: [
+                      SizedBox(height: 5),
                       Image.asset('images/rocket.png'),
                       const Text(
                         "Title",
                         style: TextStyle(
                           fontSize: 22,
+                          fontWeight: FontWeight.bold,
                         ),
                       ),
                       const Text("Description"),
+                      SizedBox(height: 10),
                     ],
                   )),
             ),
