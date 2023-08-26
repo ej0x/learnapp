@@ -21,11 +21,32 @@ class DescriptionPage extends StatelessWidget {
           child: Column(
             children: [
               Image.asset(box.imagePath),
+              Row(children: [
+                TextButton(
+                  onPressed: () {},
+                  child: Text('Hey there Hello'),
+                )
+              ]),
               FittedBox(
                 child: Text(
                   box.title,
                   style: const TextStyle(
                       fontSize: 200, fontWeight: FontWeight.bold),
+                ),
+              ),
+              const Text(
+                loremDescription,
+                textAlign: TextAlign.justify,
+                style: TextStyle(
+                  fontSize: 18,
+                ),
+              ),
+              const SizedBox(height: kDouble10),
+              const Text(
+                loremDescription,
+                textAlign: TextAlign.justify,
+                style: TextStyle(
+                  fontSize: 18,
                 ),
               ),
             ],
