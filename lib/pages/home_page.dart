@@ -13,22 +13,30 @@ class HomePage extends StatelessWidget {
       body: const SingleChildScrollView(
         child: Column(
           children: [
-            CardWidget(title: 'Rocket'),
+            CardWidget(
+              title: 'Rocket',
+              imagePath: 'images/rocket.png',
+            ),
             Row(
               children: [
                 Expanded(
-                    child: CardWidget(
-                  title: 'Rocket',
-                )),
+                  child: CardWidget(
+                    title: 'Rocket',
+                    imagePath: 'images/travel.png',
+                  ),
+                ),
                 Expanded(
-                    child: CardWidget(
-                  title: 'Rocket',
-                )),
+                  child: CardWidget(
+                    title: 'Rocket',
+                    imagePath: 'images/space.png',
+                  ),
+                ),
               ],
             ),
             CardWidget(
               title: 'Rocket',
-            )
+              imagePath: 'images/yeah.png',
+            ),
           ],
         ),
       ),

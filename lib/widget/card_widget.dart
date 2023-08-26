@@ -5,8 +5,10 @@ class CardWidget extends StatelessWidget {
   const CardWidget({
     super.key,
     required this.title,
+    required this.imagePath,
   });
   final String title;
+  final String imagePath;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +19,7 @@ class CardWidget extends StatelessWidget {
           child: Column(
             children: [
               const SizedBox(height: kDouble5),
-              Image.asset('images/rocket.png'),
+              Image.asset(imagePath),
               Text(
                 title,
                 style: const TextStyle(
@@ -25,7 +27,7 @@ class CardWidget extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              const Text("Description"),
+              const Text("This is a Description"),
               const SizedBox(height: kDouble10),
             ],
           )),
