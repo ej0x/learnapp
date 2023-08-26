@@ -21,9 +21,23 @@ class _DescriptionPageState extends State<DescriptionPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.box.title),
+        //backgroundColor: Colors.amberAccent,
+        // leading: IconButton(
+        //   onPressed: () {
+        //     Navigator.pop(context);
+        //   },
+        //   icon: const Icon(Icons.dangerous),
+        // ),
         actions: [
           IconButton(
-            onPressed: () => print('Clicked'),
+            onPressed: () {
+              ScaffoldMessenger.of(context).showSnackBar(
+                const SnackBar(
+                  content: Text("Snackbar"),
+                  behavior: SnackBarBehavior.floating,
+                ),
+              );
+            },
             icon: const Icon(Icons.info),
           ),
         ],
@@ -67,6 +81,10 @@ class _DescriptionPageState extends State<DescriptionPage> {
                         fontSizecustom = 200;
                       });
                     },
+                    // style: ElevatedButton.styleFrom(
+                    //   backgroundColor: Colors.black,
+                    //   foregroundColor: Colors.white,
+                    // ),
                     child: const Text('Huge Title'),
                   ),
                 ],
