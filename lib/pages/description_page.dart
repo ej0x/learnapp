@@ -2,25 +2,31 @@ import 'package:flutter/material.dart';
 import 'package:learnapp/class/item_class.dart';
 import 'package:learnapp/core/constants.dart';
 
-class DescriptionPage extends StatelessWidget {
+class DescriptionPage extends StatefulWidget {
   const DescriptionPage({
     super.key,
     required this.box,
   });
 
   final ItemClass box;
+
+  @override
+  State<DescriptionPage> createState() => _DescriptionPageState();
+}
+
+class _DescriptionPageState extends State<DescriptionPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(box.title),
+        title: Text(widget.box.title),
       ),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(kDouble10),
           child: Column(
             children: [
-              Image.asset(box.imagePath),
+              Image.asset(widget.box.imagePath),
               Wrap(
                 spacing: kDouble10,
                 children: [
@@ -44,7 +50,7 @@ class DescriptionPage extends StatelessWidget {
               ),
               FittedBox(
                 child: Text(
-                  box.title,
+                  widget.box.title,
                   style: const TextStyle(
                       fontSize: 200, fontWeight: FontWeight.bold),
                 ),
