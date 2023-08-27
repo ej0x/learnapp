@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:learnapp/core/constants.dart';
+import 'package:learnapp/core/notifier.dart';
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -34,7 +35,9 @@ class ProfilePage extends StatelessWidget {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          isDarkModeNotfier.value = !isDarkModeNotfier.value;
+        },
         child: const Icon(Icons.dark_mode),
       ),
     );

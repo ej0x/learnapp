@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learnapp/core/notifier.dart';
 import 'package:learnapp/widget/widget_tree.dart';
 
 void main() {
@@ -10,14 +11,21 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const WidgetTree(),
+    return ValueListenableBuilder(
+      valueListenable: isDarkModeNotfier,
+      builder: (context, isDark, child) {
+        return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          title: 'Flutter Demo',
+          theme: ThemeData(
+            brightness: isDark ? Brightness.dark : Brightness.light,
+            primarySwatch: Colors.blue,
+            // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+            useMaterial3: true,
+          ),
+          home: const WidgetTree(),
+        );
+      },
     );
   }
 }
