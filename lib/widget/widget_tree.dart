@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:learnapp/pages/home_page.dart';
+import 'package:learnapp/pages/profile_papge.dart';
 
 class WidgetTree extends StatefulWidget {
   const WidgetTree({super.key});
@@ -9,10 +10,16 @@ class WidgetTree extends StatefulWidget {
 }
 
 class _WidgetTreeState extends State<WidgetTree> {
+  int currentPage = 0;
+  List<Widget> pages = [
+    const HomePage(),
+    const ProfilePage(),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: HomePage(),
+      body: pages.elementAt(currentPage),
       bottomNavigationBar: NavigationBar(
         destinations: const [
           NavigationDestination(
@@ -24,6 +31,12 @@ class _WidgetTreeState extends State<WidgetTree> {
             label: 'Profile',
           ),
         ],
+        selectedIndex: currentPage,
+        onDestinationSelected: (int value) {
+          setState(() {
+            currentPage = value;
+          });
+        },
       ),
     );
   }
