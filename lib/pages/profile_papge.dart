@@ -38,7 +38,16 @@ class ProfilePage extends StatelessWidget {
         onPressed: () {
           isDarkModeNotfier.value = !isDarkModeNotfier.value;
         },
-        child: const Icon(Icons.dark_mode),
+        child: ValueListenableBuilder(
+          valueListenable: isDarkModeNotfier,
+          builder: (context, isDark, child) {
+            if (!isDark) {
+              return const Icon(Icons.dark_mode);
+            } else {
+              return const Icon(Icons.light_mode);
+            }
+          },
+        ),
       ),
     );
   }
