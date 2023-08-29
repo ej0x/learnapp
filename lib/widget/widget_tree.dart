@@ -27,8 +27,8 @@ class _WidgetTreeState extends State<WidgetTree> {
             label: 'Home',
           ),
           NavigationDestination(
-            icon: Icon(Icons.person),
-            label: 'Profile',
+            icon: Icon(Icons.terminal),
+            label: 'terminal',
           ),
         ],
         selectedIndex: currentPage,
